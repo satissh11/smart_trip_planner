@@ -3,7 +3,7 @@ Smart Trip Planner is a modern web-based application designed to simplify travel
 It helps users search destinations, plan routes, generate QR codes, and manage itineraries in a clean and user-friendly interface.
 
 🚀 Live Demo
-🔗 Smart Trip Planner
+🔗[ Smart Trip Planner](https://smarttripplanner-production-657c.up.railway.app/)
 
 🛠️ Tech Stack
 🎨 Frontend: React + Vite

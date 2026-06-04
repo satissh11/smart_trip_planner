@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"node backend/server.js\"",
+    "install-all": "npm install && npm install --prefix frontend && npm install --prefix backend"
+  },
+  "dependencies": {
+    "html5-qrcode": "^2.3.8",
+    "leaflet": "^1.9.4",
+    "leaflet-routing-machine": "^3.2.12",
+    "qrcode.react": "^4.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "vite-plugin-pwa": "^1.2.0"
+  }
+}

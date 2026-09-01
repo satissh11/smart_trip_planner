@@ -6,16 +6,16 @@ dotenv.config();
 
 const app = express();
 
-// middleware
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-// test route
+// Test route
 app.get("/", (req, res) => {
   res.send("🚀 Backend is running successfully!");
 });
 
-// sample API route (tum apna add kar sakte ho)
+// Health check route
 app.get("/api/health", (req, res) => {
   res.json({
     status: "ok",
@@ -23,7 +23,7 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-// PORT (Railway requirement)
+// PORT
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, "0.0.0.0", () => {

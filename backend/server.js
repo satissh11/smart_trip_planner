@@ -7,6 +7,7 @@ dotenv.config();
 
 const app = express();
 
+// Middleware
 app.use(cors());
 app.use(express.json());
 
@@ -23,8 +24,8 @@ const frontendPath = path.join(__dirname, "../frontend/dist");
 
 app.use(express.static(frontendPath));
 
-// React Router fallback
-app.get("*", (req, res) => {
+// React Router fallback - Express 5
+app.get("/*splat", (req, res) => {
   res.sendFile(path.join(frontendPath, "index.html"));
 });
 

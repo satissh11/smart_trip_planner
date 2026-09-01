@@ -1,26 +1,31 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const path = require("path");
 
 dotenv.config();
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
 // Test route
-app.get("/", (req, res) => {
-  res.send("🚀 Backend is running successfully!");
-});
-
-// Health check route
 app.get("/api/health", (req, res) => {
   res.json({
     status: "ok",
     message: "Backend working fine"
   });
+});
+
+// Serve React frontend
+const frontendPath = path.join(__dirname, "../frontend/dist");
+
+app.use(express.static(frontendPath));
+
+// React Router fallback
+app.get("*", (req, res) => {
+  res.sendFile(path.join(frontendPath, "index.html"));
 });
 
 // PORT
